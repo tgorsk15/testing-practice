@@ -1,6 +1,6 @@
-// import { capitalize } from './index';
+import { capitalize } from './index';
 
-const capitalize = require('./index');
+// const capitalize = require('./index.js');
 
 // console.log(capitalize)
 
