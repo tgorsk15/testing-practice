@@ -1,3 +1,5 @@
+/* eslint-disable arrow-body-style */
+/* eslint-disable no-console */
 /* eslint-disable comma-spacing */
 /* eslint-disable indent */
 /* eslint-disable semi */
@@ -70,19 +72,33 @@ export function caesarCipher(string) {
     return result.toUpperCase()
 }
 
-
+// analyze array function
 export function analyzeArray(numberArray) {
-    const arrayObj = [];
+    const arrayObj = {};
     
-    const average = () => {
+    const average1 = () => {
         let sum = 0;
         numberArray.forEach(num => {
             sum += num
         });
-        console.log(sum);
-        const result = Math.round(sum / (numberArray.length))
-        console.log(result)   
+        arrayObj.average = Math.round(sum / (numberArray.length));
     }
-    average();
+    average1();
+
+    // get min
+    const arrayMin = numberArray.reduce((a,b) => {
+        return (a < b ? a : b)
+    })
+    arrayObj.min = arrayMin;
+
+    // get max
+    const arrayMax = numberArray.reduce((a,b) => {
+        return (a > b ? a : b)
+    })
+    arrayObj.max = arrayMax
+
+    arrayObj.length = numberArray.length
+    console.log(arrayObj)
     
+    return arrayObj
 }

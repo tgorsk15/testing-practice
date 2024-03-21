@@ -7,11 +7,8 @@ import { capitalize,
     analyzeArray 
 } from './index';
 
-console.log(capitalize)
 
-// const capitalize = require('./index.js');
 
-// console.log(capitalize)
 const calcRun = calculatorController()
 
 test('capitalize the first letter of a string', () => {
@@ -37,7 +34,7 @@ test('encrypt a string using the caesarCipher', () => {
 })
 
 test('return the average value, the min and max value, and the length of an array of numbers', () => {
-    expect(analyzeArray([2,5,4,7,8,9])).toBe(
+    expect(analyzeArray([2,5,4,7,8,9])).toEqual(
         {
             average: 6,
             min: 2,
