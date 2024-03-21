@@ -1,4 +1,11 @@
-import { capitalize, reverseString, calculatorController } from './index';
+/* eslint-disable indent */
+/* eslint-disable no-undef */
+import { capitalize, 
+    reverseString, 
+    calculatorController, 
+    caesarCipher,
+    analyzeArray 
+} from './index';
 
 console.log(capitalize)
 
@@ -21,4 +28,21 @@ test('perform basic calculator functions', () => {
     expect(calcRun.subtract(42, 50)).toBe(-8);
     expect(calcRun.multiply(3, 4)).toBe(12);
     expect(calcRun.divide(36, 6)).toBe(6);
+});
+
+
+test('encrypt a string using the caesarCipher', () => {
+    expect(caesarCipher('zzzz')).toBe('CCCC');
+    expect(caesarCipher('abcdefghijklmnopqrstuvwxyz')).toBe('DEFGHIJKLMNOPQRSTUVWXYZABC')
+})
+
+test('return the average value, the min and max value, and the length of an array of numbers', () => {
+    expect(analyzeArray([2,5,4,7,8,9])).toBe(
+        {
+            average: 6,
+            min: 2,
+            max: 9,
+            length: 6,
+        }
+    );
 });
